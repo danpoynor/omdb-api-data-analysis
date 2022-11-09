@@ -1,16 +1,16 @@
 # Open Movie Database (OMDb) API Data Analysis
 
-Gathers data on 50 Oscar-winning movies using their IMDB ids, saves the information to a CSV file, and answers a few data analysis questions about the movies using JupyterLab.
+Gathers data for Oscar-winning movies using their IMDB ids, saves the information to a CSV file, and answers a few data analysis questions about the movies using JupyterLab.
 
 ---
 
 ## Files Included
 
-* `requirements.txt`
+* `requirements.txt` - Keeps track of modules used so other developers can run the project.
+* `.env.example`- Should be renamed `.env` and filled out with your own API key.
 * `oscar_winners.csv` - CSV file containing Movie Titles an dIMDb IDs to be used in analysis.
 * `movie_requests.py` - Used to access data and creates a new CSV file named `movies.csv` automatically.
 * `movie_analysis` - A Jupyter Notebook containing the analysis.
-* `.env.example`
 
 ---
 
@@ -54,7 +54,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-👉 Rename the `.env.example` file to `.env` and edit for your local environment if needed:
+👉 Rename the `.env.example` file to `.env` and add your [OMDb API](https://www.omdbapi.com/apikey.aspx):
 
 ```bash
 cp .env.example .env
@@ -66,7 +66,9 @@ Then run the script to load the data:
 python movie_requests.py
 ```
 
-This will read the file `oscar_winners.csv` and gather data on the listed movies before creating a new file called `movies.csv` which will be used for the Jupyter Notebook data analysis.
+This will read the file `oscar_winners.csv` file and gather data on the listed movies from [OMDb](https://www.omdbapi.com/) before creating a new file called `movies.csv` which will be used for the Jupyter Notebook data analysis.
+
+You can then open the Jupyter Notebook and run the cells to see the analysis.
 
 When done running the app, you can deactivate the virtual environment by running `deactivate`.
 
@@ -98,6 +100,7 @@ source env/bin/activate
 
 ```bash
 pip install requests
+pip install python-dotenv
 ```
 
 6. Create a `requirements.txt` file so that other developers can install the required packages.
@@ -136,4 +139,3 @@ git add .
 git commit -m "Initial commit"
 git push origin master
 ```
-
