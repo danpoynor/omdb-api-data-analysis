@@ -48,6 +48,10 @@ Google Slides presentation is available at: <https://docs.google.com/presentatio
 
 Clone this repo then `cd omdb-api-data-analysis`.
 
+NOTE: This process assumes you are using `pip` to create an environment and not using Anaconda.
+
+NOTE: In case you installed the requirements using pip previously, you may need to run `pip cache purge` to clear the cache before installing the requirements again. Also `deactivate` then `source env/bin/activate` to make sure you are using the latest/correct environment.
+
 Assuming you have Python3 installed on a MacOS, run these commands (or something similar):
 
 ```bash
@@ -70,7 +74,13 @@ python movie_requests.py
 
 This will read the file `oscar_winners.csv` and gather data on the listed movies from [OMDb](https://www.omdbapi.com/) before creating a new file called `movies.csv` which will be used for the Jupyter Notebook data analysis.
 
-You can then open the Jupyter Notebook and run the cells to see the analysis.
+You can then open the Jupyter Notebook using the command line by running:
+
+NOTE: If you had previously opened the notebook, from the 'Run' menu select 'Run All Cells' to clear any previous output.
+
+```bash
+jupyter lab movie_analysis.ipynb
+```
 
 When done running the app, you can deactivate the virtual environment by running `deactivate`.
 
